@@ -1280,7 +1280,12 @@ class CAReduce(COp):
     """
 
     __props__: Union[
-        Tuple[str], Tuple[str, str], Tuple[str, str, str], Tuple[str, str, str, str]
+        Tuple[str],
+        Tuple[str, str],
+        Tuple[str, str, str],
+        Tuple[str, str, str, str],
+        Tuple[str, str, str, str, str],
+        Tuple[str, str, str, str, str, str],
     ] = ("scalar_op", "axis")
 
     def __init__(self, scalar_op, axis=None):
@@ -1666,7 +1671,11 @@ class CAReduceDtype(CAReduce):
 
     """
 
-    __props__: Union[Tuple[str, str, str], Tuple[str, str, str, str]] = (
+    __props__: Union[
+        Tuple[str, str, str],
+        Tuple[str, str, str, str],
+        Tuple[str, str, str, str, str, str],
+    ] = (
         "scalar_op",
         "axis",
         "dtype",
