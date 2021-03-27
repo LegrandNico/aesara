@@ -177,9 +177,9 @@ class Op(MetaObject):
     """
 
     default_output: Optional[int] = None
-    itypes: Optional[List[TypeVar]] = None
-    otypes: Optional[List[TypeVar]] = None
-    params_type: Optional[Union[ParamsType, GpuContextType, EnumList]] = None
+    itypes: Optional[List] = None
+    otypes: Optional[List] = None
+    params_type: "Optional[Union[ParamsType, GpuContextType, EnumList]]" = None
     """
     An ``int`` that specifies which output :meth:`Op.__call__` should return.  If
     ``None``, then all outputs are returned.
@@ -388,9 +388,16 @@ class Op(MetaObject):
         inputs
             The `Op` inputs.
         eval_points
+<<<<<<< HEAD
             A `Variable` or list of `Variable`\s with the same length as inputs.
             Each element of `eval_points` specifies the value of the corresponding
             input at the point where the R-operator is to be evaluated.
+=======
+            A Variable or list of Variables with the same length as inputs.
+            Each element of eval_points specifies the value of the
+            corresponding input at the point where the R op is to be
+            evaluated.
+>>>>>>> 62b7677a3 (Use forward reference for Op in `Apply` class)
 
         Returns
         -------

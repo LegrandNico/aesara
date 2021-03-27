@@ -43,7 +43,14 @@ def as_tensor_variable(
 
 @singledispatch
 def _as_tensor_variable(
+<<<<<<< HEAD
     x, name: Optional[str], ndim: Optional[int], **kwargs
+=======
+    x: "Union[int, List, Apply, Variable]",
+    name: Optional[str],
+    ndim: Optional[int],
+    **kwargs
+>>>>>>> 62b7677a3 (Use forward reference for Op in `Apply` class)
 ) -> NoReturn:
     raise NotImplementedError(f"Cannot convert {x} to a tensor variable.")
 
