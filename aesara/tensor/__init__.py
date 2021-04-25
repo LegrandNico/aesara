@@ -3,9 +3,12 @@
 
 __docformat__ = "restructuredtext en"
 
-import warnings
 from functools import singledispatch
-from typing import Any, Callable, NoReturn, Optional
+from typing import TYPE_CHECKING, Any, Callable, List, NoReturn, Optional, Union
+
+
+if TYPE_CHECKING:
+    from aesara.graph.basic import Apply, Variable
 
 
 def as_tensor_variable(
@@ -49,8 +52,12 @@ def _as_tensor_variable(
     x: "Union[int, List, Apply, Variable]",
     name: Optional[str],
     ndim: Optional[int],
+<<<<<<< HEAD
     **kwargs
 >>>>>>> 62b7677a3 (Use forward reference for Op in `Apply` class)
+=======
+    **kwargs,
+>>>>>>> 51b755ddd (Resolving conflicts)
 ) -> NoReturn:
     raise NotImplementedError(f"Cannot convert {x} to a tensor variable.")
 
